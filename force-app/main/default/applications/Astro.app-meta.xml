@@ -11,8 +11,8 @@
     <label>Astro</label>
     <navType>Standard</navType>
     <tabs>Persona__c</tabs>
-    <tabs>Astro</tabs>
-    <tabs>Astro2</tabs>
+    <tabs>Astro_Persona_1</tabs>
+    <tabs>Astro_Persona_2</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Astro_UtilityBar</utilityBar>
 </CustomApplication>

@@ -1,0 +1,5 @@
+<design:component label="Ask Astro Persona">
+    
+    <design:attribute name="personaName" label="Persona Name" default="Distributor" /> 
+    
+</design:component>

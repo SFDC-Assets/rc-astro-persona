@@ -5,26 +5,23 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>astroImage</name>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>personaName</name>
-                <value>Category Desk</value>
-            </componentInstanceProperties>
-            <componentName>AskAstroWidget</componentName>
-        </componentInstances>
         <name>region2</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>personaName</name>
+                <value>Distributor</value>
+            </componentInstanceProperties>
+            <componentName>AskAstroPersona</componentName>
+        </componentInstances>
         <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Astro</masterLabel>
+    <masterLabel>Astro Persona 1</masterLabel>
     <template>
-        <name>flexipage:appHomeTemplateHeaderTwoColumnsLeftSidebar</name>
+        <name>flexipage:appHomeTemplateHeaderTwoColumns</name>
     </template>
     <type>AppPage</type>
 </FlexiPage>

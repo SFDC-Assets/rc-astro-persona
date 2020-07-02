@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Created by Lightning App Builder</description>
-    <flexiPage>Astro2</flexiPage>
-    <label>Astro2</label>
-    <motif>Custom82: Whistle</motif>
+    <flexiPage>Astro_Persona_1</flexiPage>
+    <label>Astro Persona 1</label>
+    <motif>Custom31: Car</motif>
 </CustomTab>
