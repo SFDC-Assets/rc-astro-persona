@@ -1,6 +1,0 @@
-<design:component label="Ask Astro">
-    
-    <design:attribute name="personaName" label="Persona Name" default="Distributor" /> 
-    <design:attribute name="astroImage" label="Astro Image [DEPRECATED]" /> 
-    
-</design:component>

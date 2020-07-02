@@ -13,6 +13,7 @@
     <tabs>Persona__c</tabs>
     <tabs>Astro_Persona_1</tabs>
     <tabs>Astro_Persona_2</tabs>
+    <tabs>Astro_Persona_3</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Astro_UtilityBar</utilityBar>
 </CustomApplication>

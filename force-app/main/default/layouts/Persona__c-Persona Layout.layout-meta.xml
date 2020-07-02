@@ -26,6 +26,10 @@
                 <behavior>Edit</behavior>
                 <field>Where_Are_We__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Flow_API_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

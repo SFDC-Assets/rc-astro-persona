@@ -3,20 +3,28 @@
     init: function(component, event, helper) {
 
         var personaName = component.get("v.personaName");
-    	console.log('AskAstroWidgetController > init - personaName: ' + personaName); 
+        var flowName = component.get("v.flowName");
+        console.log('AskAstroFlowController > init - personaName: ' + personaName + ', flowName: ' + flowName); 
 
-        var componentID = "AskAstroFlow";
-        var flowName = "Ask_Astro_Persona";
+        if (!flowName) {
+            flowName = component.get("v.defaultFlowName");
+            console.log('AskAstroFlowController > init - using default flowName: ' + flowName);
+        }
         
-        if (flowName) {
+        var componentID = "AskAstroFlow";        
+        
+        if (flowName && flowName != "") {
 
             // find the view component (by aura:id) where the flow will be displayed
             var flow = component.find(componentID);
 
             // flow inputs
             var inputVariables = [];
-            inputVariables[0] = { name : "personaName", type : "String", value: personaName };
-            console.log('AskAstroWidgetController > init - inputVariables: ' + JSON.stringify(inputVariables));
+            
+            if (flowName == "Ask_Astro_Persona") {
+                inputVariables[0] = { name : "personaName", type : "String", value: personaName };
+            }            
+            console.log('AskAstroFlowController > init - inputVariables: ' + JSON.stringify(inputVariables));
     
             // start the flow by the flow Unique Name
             flow.startFlow(flowName, inputVariables);

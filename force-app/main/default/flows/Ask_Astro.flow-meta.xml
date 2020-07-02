@@ -19,7 +19,7 @@
         <name>Screen1</name>
         <label>Screen1</label>
         <locationX>163</locationX>
-        <locationY>51</locationY>
+        <locationY>50</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -33,6 +33,12 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <startElementReference>Screen1</startElementReference>
-    <status>Draft</status>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Screen1</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
 </Flow>

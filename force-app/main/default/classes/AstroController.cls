@@ -7,7 +7,7 @@ global without sharing class AstroController {
         Persona__c persona;
 
         List<Persona__c> personas = [
-                SELECT Id, Name, Full_Name__c, Role__c, Image__c, Where_Are_We__c 
+                SELECT Id, Name, Full_Name__c, Role__c, Image__c, Where_Are_We__c, Flow_API_Name__c
                 FROM Persona__c
                 WHERE Name = :personaName
         ];

@@ -1,6 +1,11 @@
 <aura:component description="AskAstroFlow" implements="forceCommunity:availableForAllPageTypes">
 
+    <!-- input -->
     <aura:attribute name="personaName" type="String" access="global" />
+    <aura:attribute name="flowName" type="String" access="global" default="Ask_Astro_Persona" />
+    
+    <!-- private attributes -->
+    <aura:attribute name="defaultFlowName" type="String" default="Ask_Astro_Persona" />
     
     <!-- handlers -->
     <aura:handler name="init" action="{!c.init}" value="{!this}"/>

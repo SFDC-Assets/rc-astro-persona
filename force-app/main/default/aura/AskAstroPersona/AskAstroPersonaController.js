@@ -1,8 +1,9 @@
 ({
   init: function(cmp, evt, helper) {
        
+   	// get persona
     var personaName = cmp.get("v.personaName");
-    console.log('AskAstroWidgetController > init - personaName: ' + personaName);
+    console.log(helper.controllerFile() + ' > init - personaName: ' + personaName);
     helper.getPersona(cmp);
       
     const name = "askAstroPosition";
@@ -116,7 +117,7 @@
   },
     
   locationChange: function(cmp, evt, helper) {
-    //console.log('AskAstroWidgetController - locationChange');
+    //console.log(helper.controllerFile() + ' > locationChange');
   }
     
     

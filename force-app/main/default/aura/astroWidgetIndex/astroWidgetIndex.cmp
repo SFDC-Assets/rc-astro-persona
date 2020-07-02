@@ -16,7 +16,7 @@
     <c:astroWidgetContainer openUp="{!v.openUp}" widgetPosY="{!v.widgetPosY}">
         <!-- Place body cmp here -->
         
-        <c:AskAstroFlow personaName="{!v.persona.Name}" />
+        <c:AskAstroFlow personaName="{!v.persona.Name}" flowName="{!v.persona.Flow_API_Name__c}" />
 
     </c:astroWidgetContainer>
 

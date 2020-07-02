@@ -1,5 +1,9 @@
 ({
     
+    controllerFile: function() {
+        return "AskAstroPersonaController";
+    }, 
+    
     helperFile: function() {
         return "AskAstroPersonaHelper";
     }, 
@@ -33,7 +37,7 @@
 
                         var persona = response.getReturnValue();
 
-                        if (persona) { // grantProgram exists
+                        if (persona) { 
                             component.set("v.persona", persona);
                             console.log(this.helperFile() + ' > getPersona - persona:' + JSON.stringify(persona));
                         }
