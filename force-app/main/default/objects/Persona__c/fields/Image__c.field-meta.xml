@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Image__c</fullName>
+    <defaultValue>&apos;laurenbailey&apos;</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Name of the static resource for the image used in the Astro floating head</inlineHelpText>
+    <label>Image</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

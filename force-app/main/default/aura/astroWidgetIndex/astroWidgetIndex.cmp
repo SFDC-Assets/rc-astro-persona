@@ -1,0 +1,23 @@
+<aura:component>
+    <aura:attribute name="persona" type="Persona__c" access="global" />
+    <aura:attribute name="widgetPosY" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:if isTrue="{! !v.openUp}">
+        <div class="open-down">
+            <c:astroWidgetToggle openUp="{!v.openUp}" astroImage="{!v.persona.Image__c}" />
+        </div>
+    </aura:if>
+
+    <aura:if isTrue="{! v.openUp}">
+        <c:astroWidgetToggle astroImage="{!v.persona.Image__c}" />
+    </aura:if>
+    <c:astroWidgetContainer openUp="{!v.openUp}" widgetPosY="{!v.widgetPosY}">
+        <!-- Place body cmp here -->
+        
+        <c:AskAstroFlow personaName="{!v.persona.Name}" />
+
+    </c:astroWidgetContainer>
+
+</aura:component>

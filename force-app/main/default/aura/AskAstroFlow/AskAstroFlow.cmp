@@ -1,0 +1,11 @@
+<aura:component description="AskAstroFlow" implements="forceCommunity:availableForAllPageTypes">
+
+    <aura:attribute name="personaName" type="String" access="global" />
+    
+    <!-- handlers -->
+    <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+
+    <!-- flow -->
+    <lightning:flow aura:id="AskAstroFlow"/>
+
+</aura:component>
