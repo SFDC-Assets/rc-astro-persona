@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Role__c</fullName>
-    <defaultValue>&apos;Distributor&apos;</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>The Persona Role. Might be the same as the Persona Name such as: &quot;Partner&quot;, &quot;Customer&quot;; or a title: &quot;Sales Executive&quot;, &quot;Operations Manager&quot;. Used by the default Flow &apos;Ask_Astro_Persona&apos;.</inlineHelpText>
     <label>Role</label>
