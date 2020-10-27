@@ -57,6 +57,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Astro_Persona_4</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Persona__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
