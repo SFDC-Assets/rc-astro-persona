@@ -9,6 +9,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -18,8 +24,8 @@
     <screens>
         <name>Screen1</name>
         <label>Screen1</label>
-        <locationX>163</locationX>
-        <locationY>50</locationY>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -35,7 +41,7 @@
     </screens>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Screen1</targetReference>
         </connector>

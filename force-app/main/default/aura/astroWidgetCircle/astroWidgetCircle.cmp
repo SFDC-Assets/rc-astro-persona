@@ -1,5 +1,6 @@
 <aura:component>
     <aura:attribute name="astroImage" type="String" access="global" />
+    <aura:attribute name="astroImageResource" type="String" access="global" />
     
     <aura:attribute name="isOpen" type="Boolean" />
     <aura:attribute name="openUp" type="Boolean" />
@@ -11,7 +12,8 @@
         <aura:if isTrue="{!v.isOpen}">
             <img class="widget-close" alt="" src="{!$Resource.AskAstroResources + '/x.svg'}" draggable="false" data-auth-click="canClick" data-is-child="true" />
             <aura:set attribute="else">
-                <img class="widget-astro-head slideInRight" alt="" src="{!$Resource.astroProfileImages + '/images/' + v.astroImage + '.png'}" draggable="false" data-auth-click="canClick" data-is-child="true" />
+                <!-- <img class="widget-astro-head slideInRight" alt="" src="{!$Resource.astroProfileImages + '/images/' + v.astroImage + '.png'}" draggable="false" data-auth-click="canClick" data-is-child="true" /> -->
+            	<img class="widget-astro-head slideInRight" alt="" src="{!v.astroImageResource}" draggable="false" data-auth-click="canClick" data-is-child="true" />
             </aura:set>
         </aura:if>
     </div>

@@ -5,6 +5,7 @@
     <columns>Full_Name__c</columns>
     <columns>Role__c</columns>
     <columns>Image__c</columns>
+    <columns>Flow_API_Name__c</columns>
     <columns>Where_Are_We__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>

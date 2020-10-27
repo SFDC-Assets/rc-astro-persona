@@ -160,7 +160,13 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Personas</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Full_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Role__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Image__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Where_Are_We__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Flow_API_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

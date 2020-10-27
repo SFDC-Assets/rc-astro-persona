@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Get_Persona_Details</name>
         <label>Get Persona</label>
-        <locationX>357</locationX>
-        <locationY>30</locationY>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
         <actionName>AstroController</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -24,8 +24,8 @@
     <actionCalls>
         <name>Get_Persona_Details_0</name>
         <label>Get Persona</label>
-        <locationX>358</locationX>
-        <locationY>189</locationY>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
         <actionName>AstroController</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -34,7 +34,7 @@
         <inputParameters>
             <name>personaName</name>
             <value>
-                <stringValue>Default</stringValue>
+                <stringValue>Astro</stringValue>
             </value>
         </inputParameters>
         <outputParameters>
@@ -45,12 +45,12 @@
     <decisions>
         <name>PersonaName_Exists</name>
         <label>Persona Name?</label>
-        <locationX>158</locationX>
-        <locationY>133</locationY>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
         <defaultConnector>
             <targetReference>Get_Persona_Details_0</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <defaultConnectorLabel>No (Use Default)</defaultConnectorLabel>
         <rules>
             <name>PersonaName_Exists_Yes</name>
             <conditionLogic>and</conditionLogic>
@@ -76,6 +76,12 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
         <name>OriginBuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
@@ -85,8 +91,8 @@
     <screens>
         <name>Screen1</name>
         <label>Persona Details</label>
-        <locationX>515</locationX>
-        <locationY>120</locationY>
+        <locationX>182</locationX>
+        <locationY>494</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -116,7 +122,7 @@
         </fields>
         <fields>
             <name>display_fullName</name>
-            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Name: {!persona.Full_Name__c}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Name: {!persona.Full_Name__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
@@ -131,7 +137,7 @@
         </fields>
         <fields>
             <name>display_role2</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Role: {!persona.Role__c}&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Role: {!persona.Role__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -145,9 +151,9 @@
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>imageWidth</name>
+                <name>imageHeight</name>
                 <value>
-                    <stringValue>400</stringValue>
+                    <stringValue>300</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -166,8 +172,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>48</locationX>
-        <locationY>131</locationY>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>PersonaName_Exists</targetReference>
         </connector>

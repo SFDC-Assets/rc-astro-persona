@@ -2,6 +2,7 @@
     
     <!-- input --> 
     <aura:attribute name="personaName" type="String" access="global" default="Distributor" />
+    <aura:attribute name="widgetHeight" type="String" access="global" default="620" />
     
     <!-- set onit -->
     <aura:attribute name="persona" type="Persona__c" access="private" />
@@ -43,7 +44,7 @@
         	<aura:if isTrue="{!v.persona}">
                 <!-- Astro widget -->
                 <div aura:id="widget" class="{! 'widget' + if(v.isDragging,' dragging','') + ' screenQuarter' + v.quarter}" draggable="true" onmousedown="{!c.handleMouseDown}" ondragstart="{!c.handleDragStart}" style="{!v.isPositioned == false ? 'right:' + v.posX + 'px;bottom:' + v.posY + 'px;' : 'left:' + v.posX + 'px;top:' + v.posY + 'px;'}">
-                    <c:astroWidgetIndex widgetPosY="{! v.posY}" persona="{!v.persona}"/>
+                    <c:astroWidgetIndex widgetPosY="{! v.posY}" widgetHeight="{!v.widgetHeight}" persona="{!v.persona}"/>
                 </div>
             </aura:if>
 

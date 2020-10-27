@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Where_Are_We__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Name of the static resource for the image used in the details pop-up window. e.g. an architecture diagram describing the use case for the persona role.</inlineHelpText>
     <label>Where Are We?</label>
     <length>255</length>
     <required>false</required>

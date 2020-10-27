@@ -3,6 +3,7 @@
     <fullName>Flow_API_Name__c</fullName>
     <defaultValue>&quot;Ask_Astro_Persona&quot;</defaultValue>
     <externalId>false</externalId>
+    <inlineHelpText>The Flow to launch within the pop-up window opened when the Astro floating head is clicked.</inlineHelpText>
     <label>Flow API Name</label>
     <length>50</length>
     <required>false</required>

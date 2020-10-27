@@ -2,7 +2,7 @@
 
     <aura:attribute name="openUp" type="Boolean" default="true" />
     <aura:attribute name="widgetPosY" type="String" default="72" />
-    <aura:attribute name="widgetHeight" type="String" default="590" access="private"/>
+    <aura:attribute name="widgetHeight" type="String"/>
     <aura:attribute name="widgetStatus" type="String" access="private"/>
 
     <!-- handle event and recalculate section height after widget reposition -->
