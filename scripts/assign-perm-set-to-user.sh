@@ -1,5 +1,5 @@
 USER_ALIAS="${USER_ALIAS:-sfdx-astro-persona__dev}"
-#USER_ALIAS="${USER_ALIAS:-sfdx-privacy-center-compliance__qa}"
+#$USER_ALIAS="${USER_ALIAS:-sfdx-astro-persona__qa}"
 # perm set 1
 PERM_SET=rc_astro_persona
 echo assigning permission set $PERM_SET to USER_ALIAS = $USER_ALIAS

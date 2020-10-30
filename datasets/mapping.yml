@@ -1,11 +1,10 @@
 Insert Persona__c:
   sf_object: Persona__c
-  table: Persona__c
   fields:
-    Id: sf_id
-    Name: Name
-    Flow_API_Name__c: Flow_API_Name__c
-    Full_Name__c: Full_Name__c
-    Image__c: Image__c
-    Role__c: Role__c
-    Where_Are_We__c: Where_Are_We__c
+  - Flow_API_Name__c
+  - Full_Name__c
+  - Image__c
+  - Name
+  - Role__c
+  - Where_Are_We__c
+  - Width__c
