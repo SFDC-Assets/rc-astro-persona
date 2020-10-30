@@ -8,7 +8,7 @@
         <actionName>AstroController</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>Use_Case_1</targetReference>
+            <targetReference>Persona_Details</targetReference>
         </connector>
         <inputParameters>
             <name>personaName</name>
@@ -29,7 +29,7 @@
         <actionName>AstroController</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>Use_Case_1</targetReference>
+            <targetReference>Persona_Details</targetReference>
         </connector>
         <inputParameters>
             <name>personaName</name>
@@ -89,29 +89,59 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <screens>
-        <name>Use_Case_1</name>
-        <label>Use Case 1</label>
+        <name>Persona_Details</name>
+        <label>Persona Details</label>
         <locationX>182</locationX>
         <locationY>494</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Use_Case_2</targetReference>
+            <targetReference>Use_Case_1</targetReference>
         </connector>
         <fields>
-            <name>title1</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 18px; color: rgb(62, 62, 60);&quot;&gt;{!persona.Role__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>useCase1_image</name>
+            <name>display_image</name>
             <extensionName>flowruntime:image</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>imageName</name>
                 <value>
-                    <stringValue>hrFutureArchitecture</stringValue>
+                    <elementReference>persona.Image__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>imageHeight</name>
+                <value>
+                    <stringValue>120</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>imageCSS</name>
+                <value>
+                    <stringValue>slds-align_absolute-center</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>display_fullName</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Name: {!persona.Full_Name__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>display_role</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Role: {!persona.Role__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>image_whereAreWe</name>
+            <extensionName>flowruntime:image</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>imageName</name>
+                <value>
+                    <elementReference>persona.Where_Are_We__c</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -122,28 +152,33 @@
             </inputParameters>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>persona.Image__c</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <stringValue>blank</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Use_Case_2</name>
-        <label>Use Case 2</label>
+        <name>Use_Case_1</name>
+        <label>Use Case 1</label>
         <locationX>182</locationX>
         <locationY>614</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Use_Case_3</targetReference>
+            <targetReference>Use_Case_2</targetReference>
         </connector>
         <fields>
-            <name>title2</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 18px; color: rgb(62, 62, 60);&quot;&gt;{!persona.Role__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>useCase2</name>
+            <name>useCase1</name>
             <extensionName>flowruntime:image</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
@@ -165,23 +200,18 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Use_Case_3</name>
-        <label>Use Case 3</label>
+        <name>Use_Case_2</name>
+        <label>Use Case 2</label>
         <locationX>182</locationX>
         <locationY>734</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Use_Case_4</targetReference>
+            <targetReference>Use_Case_3</targetReference>
         </connector>
         <fields>
-            <name>title3</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 18px; color: rgb(62, 62, 60);&quot;&gt;{!persona.Role__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>useCase3</name>
+            <name>useCase2</name>
             <extensionName>flowruntime:image</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
@@ -203,20 +233,15 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Use_Case_4</name>
-        <label>Use Case 4</label>
+        <name>Use_Case_3</name>
+        <label>Use Case 3</label>
         <locationX>182</locationX>
         <locationY>854</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>title4</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 18px; color: rgb(62, 62, 60);&quot;&gt;{!persona.Role__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>useCase4</name>
+            <name>useCase3</name>
             <extensionName>flowruntime:image</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>

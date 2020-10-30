@@ -2,14 +2,17 @@
 
     <aura:attribute name="openUp" type="Boolean" default="true" />
     <aura:attribute name="widgetPosY" type="String" default="72" />
+    <aura:attribute name="widgetWidth" type="String"/>
     <aura:attribute name="widgetHeight" type="String"/>
     <aura:attribute name="widgetStatus" type="String" access="private"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
     <!-- handle event and recalculate section height after widget reposition -->
     <aura:handler event="c:astroWidgetCalcHeight" action="{!c.reCalcHeight}" />
     <aura:handler event="c:astroWidgetToggleEvent" action="{!c.handleToggleEvent}" />
 
-    <section aura:id='container' class="{! 'widgetOverlay widget-' + v.widgetStatus + if(v.openUp,'',' open-down')}" style="{!'height: ' + v.widgetHeight + 'px;'}">
+    <section aura:id='container' class="{! 'widgetOverlay widget-' + v.widgetStatus + if(v.openUp,'',' open-down')}" style="{!'height: ' + v.widgetHeight + 'px; width: ' + v.widgetWidth + 'px;'}">
         <div class='container' style="{! 'background-image: url(\'' + $Resource.AskAstroResources + '/widgetBG-min.png' + '\')' }">
             {!v.body}
         </div>

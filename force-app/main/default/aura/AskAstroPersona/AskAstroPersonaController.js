@@ -5,7 +5,7 @@
     var personaName = cmp.get("v.personaName");
     console.log(helper.controllerFile() + ' > init - personaName: ' + personaName);
     helper.getPersona(cmp);
-      
+            
     const name = "askAstroPosition";
     helper.loadWidgetLocationPoints(cmp, evt, name);
 

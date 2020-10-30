@@ -7,6 +7,7 @@
     <columns>Image__c</columns>
     <columns>Flow_API_Name__c</columns>
     <columns>Where_Are_We__c</columns>
+    <columns>Width__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

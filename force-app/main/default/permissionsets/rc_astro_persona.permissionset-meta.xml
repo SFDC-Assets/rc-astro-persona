@@ -33,6 +33,11 @@
         <field>Persona__c.Where_Are_We__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Persona__c.Width__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>astro_persona</label>
     <objectPermissions>

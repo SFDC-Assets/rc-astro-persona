@@ -1,6 +1,7 @@
 <aura:component>
     <aura:attribute name="persona" type="Persona__c" access="global" />
-    <aura:attribute name="widgetHeight" type="String"/>
+    <aura:attribute name="widgetWidth" type="String" access="global" />
+    <aura:attribute name="widgetHeight" type="String" access="global" />
     <aura:attribute name="widgetPosY" type="String" />
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
@@ -14,8 +15,8 @@
     <aura:if isTrue="{! v.openUp}">
         <c:astroWidgetToggle astroImage="{!v.persona.Image__c}" />
     </aura:if>
-    <c:astroWidgetContainer openUp="{!v.openUp}" widgetHeight="{!v.widgetHeight}" widgetPosY="{!v.widgetPosY}">
-        <!-- Place body cmp here -->
+    <c:astroWidgetContainer openUp="{!v.openUp}" widgetWidth="{!v.widgetWidth}" widgetHeight="{!v.widgetHeight}" widgetPosY="{!v.widgetPosY}">
+        <!-- place body of pop-up window here -->
         
         <c:AskAstroFlow personaName="{!v.persona.Name}" flowName="{!v.persona.Flow_API_Name__c}" />
 
