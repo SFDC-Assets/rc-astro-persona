@@ -10,6 +10,7 @@ This is an SFDX project that extends the Hover Assistant (Ask Astro) component a
 
 ![Slide 4](docs/images/slide4.png)
 
+See this doc for more details: [Astro Persona component.pdf](docs/Astro%20Persona%20component.pdf)
 
 ## Development
 
