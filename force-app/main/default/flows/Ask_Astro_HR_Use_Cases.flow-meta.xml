@@ -117,7 +117,7 @@
             <inputParameters>
                 <name>imageWidth</name>
                 <value>
-                    <stringValue>450</stringValue>
+                    <elementReference>imageWidth</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -155,7 +155,7 @@
             <inputParameters>
                 <name>imageWidth</name>
                 <value>
-                    <stringValue>450</stringValue>
+                    <elementReference>imageWidth</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -193,7 +193,7 @@
             <inputParameters>
                 <name>imageWidth</name>
                 <value>
-                    <stringValue>450</stringValue>
+                    <elementReference>imageWidth</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -228,7 +228,7 @@
             <inputParameters>
                 <name>imageWidth</name>
                 <value>
-                    <stringValue>450</stringValue>
+                    <elementReference>imageWidth</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -245,6 +245,16 @@
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>imageWidth</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>595px</stringValue>
+        </value>
+    </variables>
     <variables>
         <name>persona</name>
         <dataType>SObject</dataType>
