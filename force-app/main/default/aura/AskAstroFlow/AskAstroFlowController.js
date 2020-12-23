@@ -19,11 +19,8 @@
             var flow = component.find(componentID);
 
             // flow inputs
-            var inputVariables = [];
-            
-            if (flowName == "Ask_Astro_Persona") {
-                inputVariables[0] = { name : "personaName", type : "String", value: personaName };
-            }            
+            var inputVariables = [];           
+            inputVariables[0] = { name : "personaName", type : "String", value: personaName };         
             console.log('AskAstroFlowController > init - inputVariables: ' + JSON.stringify(inputVariables));
     
             // start the flow by the flow Unique Name
