@@ -47,4 +47,11 @@
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>personaName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

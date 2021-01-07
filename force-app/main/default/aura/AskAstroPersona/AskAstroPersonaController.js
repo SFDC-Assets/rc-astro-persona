@@ -118,7 +118,11 @@
     
   locationChange: function(cmp, evt, helper) {
     //console.log(helper.controllerFile() + ' > locationChange');
-  }
+  }, 
+    
+  onTabFocused: function(cmp, evt, helper) {
+    console.log(helper.controllerFile() + ' > onTabFocused (no-op)');
+  }, 
     
     
 });

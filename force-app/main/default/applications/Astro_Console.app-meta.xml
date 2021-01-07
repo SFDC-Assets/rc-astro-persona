@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Astro Console</label>
+    <navType>Console</navType>
+    <tabs>Persona__c</tabs>
+    <tabs>Astro_Persona_1</tabs>
+    <tabs>Astro_Persona_2</tabs>
+    <tabs>Astro_Persona_3</tabs>
+    <tabs>Astro_Persona_4</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Astro_Console_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>Astro_Persona_1</tab>
+        </mappings>
+        <mappings>
+            <tab>Astro_Persona_2</tab>
+        </mappings>
+        <mappings>
+            <tab>Astro_Persona_3</tab>
+        </mappings>
+        <mappings>
+            <tab>Astro_Persona_4</tab>
+        </mappings>
+        <mappings>
+            <tab>Persona__c</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>
