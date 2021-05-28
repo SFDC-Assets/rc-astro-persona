@@ -1,6 +1,6 @@
 # sfdx-astro-persona
 
-This is an SFDX project that extends the Hover Assistant (Ask Astro) component at https://github.com/forcedotcom/hover-assistant to provide a **Astro Persona** lightning component. This is a floating head that can be used for in-app guidance. I use it for describing in-context user personas for demos. This component can be used on any lightning page or Experience Cloud (formerly known as Communities) page. 
+This is an SFDX project that extends the Hover Assistant (Ask Astro) component at https://github.com/forcedotcom/hover-assistant to provide a **Astro Persona** lightning component. This is a floating head that can be used for in-app guidance. I use it for describing in-context user personas for demos. This component can be used on any lightning page or Experience Cloud (formerly known as Communities) page.  
 
 ![Slide 1](docs/images/slide1.png)
 
