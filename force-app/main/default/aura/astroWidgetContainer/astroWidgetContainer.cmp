@@ -4,7 +4,8 @@
     <aura:attribute name="widgetPosY" type="String" default="72" />
     <aura:attribute name="widgetWidth" type="String"/>
     <aura:attribute name="widgetHeight" type="String"/>
-    <aura:attribute name="backgroundImage" type="String" default="widgetBG-whiteBlueBorder.png" /> <!-- widgetBG-min.png -->
+    <aura:attribute name="backgroundImage" type="String" />
+    <aura:attribute name="backgroundColor" type="String" access="global" />
     <aura:attribute name="widgetStatus" type="String" access="private"/>
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
@@ -14,9 +15,19 @@
     <aura:handler event="c:astroWidgetToggleEvent" action="{!c.handleToggleEvent}" />
 
     <section aura:id='container' class="{! 'widgetOverlay widget-' + v.widgetStatus + if(v.openUp,'',' open-down')}" style="{!'height: ' + v.widgetHeight + 'px; width: ' + v.widgetWidth + 'px;'}">
-         <div class='container' style="{! 'background-image: url(\'' + $Resource.AskAstroResources + '/' + v.backgroundImage + '\')' }">
-            {!v.body}
-        </div>
+
+        <aura:if isTrue="{!v.backgroundImage != null}">
+            <div class='container' style="{! 'background-image: url(\'' + $Resource.AskAstroResources + '/' + v.backgroundImage + '\')' }">
+                {!v.body}
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.backgroundImage == null}">
+            <div class='container' style="{! 'background-color: ' + v.backgroundColor }">
+                {!v.body}
+            </div>
+        </aura:if>
+        
     </section>
 
 </aura:component>

@@ -1,13 +1,8 @@
 ({
     doInit: function(cmp, evt, helper) {      
-    	var widgetWidth = cmp.get("v.widgetWidth");
-    	console.log('astroWidgetContainerController - widgetWidth: ' + widgetWidth);
-        
-        var widgetHeight = cmp.get("v.widgetHeight");
-    	console.log('astroWidgetContainerController - widgetHeight: ' + widgetHeight);
-        
-        var backgroundImage = cmp.get("v.backgroundImage");
-        console.log('astroWidgetContainerController - backgroundImage: ' + backgroundImage);
+    	console.log('astroWidgetContainerController - widgetWidth: ' + cmp.get("v.widgetWidth") + ', widgetHeight: ' + cmp.get("v.widgetHeight"));        
+        console.log('astroWidgetContainerController - backgroundImage: ' + cmp.get("v.backgroundImage"));
+        console.log('astroWidgetContainerController - backgroundColor: ' + cmp.get("v.backgroundColor"));
     },
     
     /* calulates height of section element */

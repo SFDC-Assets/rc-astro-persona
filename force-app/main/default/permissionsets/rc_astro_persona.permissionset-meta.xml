@@ -10,12 +10,27 @@
     </classAccesses>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Persona__c.Background_Color__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Persona__c.Background_Image__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Persona__c.Flow_API_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Persona__c.Full_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Persona__c.Height__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

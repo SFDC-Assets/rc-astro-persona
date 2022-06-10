@@ -12,7 +12,7 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>personaName</name>
-                <value>Distributor</value>
+                <value>Robot</value>
             </componentInstanceProperties>
             <componentName>AskAstroPersona</componentName>
         </componentInstances>
