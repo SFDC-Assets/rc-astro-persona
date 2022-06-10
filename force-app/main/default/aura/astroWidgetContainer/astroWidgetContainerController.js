@@ -2,8 +2,12 @@
     doInit: function(cmp, evt, helper) {      
     	var widgetWidth = cmp.get("v.widgetWidth");
     	console.log('astroWidgetContainerController - widgetWidth: ' + widgetWidth);
+        
         var widgetHeight = cmp.get("v.widgetHeight");
     	console.log('astroWidgetContainerController - widgetHeight: ' + widgetHeight);
+        
+        var backgroundImage = cmp.get("v.backgroundImage");
+        console.log('astroWidgetContainerController - backgroundImage: ' + backgroundImage);
     },
     
     /* calulates height of section element */
