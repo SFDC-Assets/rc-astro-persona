@@ -1,8 +1,11 @@
 Insert Persona__c:
   sf_object: Persona__c
   fields:
+  - Background_Color__c
+  - Background_Image__c
   - Flow_API_Name__c
   - Full_Name__c
+  - Height__c
   - Image__c
   - Name
   - Role__c

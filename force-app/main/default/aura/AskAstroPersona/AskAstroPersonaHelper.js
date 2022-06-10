@@ -7,72 +7,87 @@
   helperFile: function() {
       return "AskAstroPersonaHelper";
   }, 
-
- getPersona: function(component) {
-
-      return new Promise((resolve, reject) => {
-
-          var personaName = component.get("v.personaName");
-          console.log(this.helperFile() + ' > getPersona - personaName: ' + personaName);
-
-          // Create the action
-          var doAction = true;
-          var action = component.get("c.getPersona"); // method on the AstroController
-          if ((personaName) && (personaName != '')) {
-              action.setParams({
-                  "personaName": personaName
-              });
-          } else {
-              // no input parameters
-              doAction = false;
-          }
-
-          if (doAction) {
-
-              // Add callback behavior for when response is received
-              action.setCallback(this, function(response) {
-                  console.log(this.helperFile() + ' > getPersona - response: ' + response.getState())
-                  var state = response.getState();
-                  if (state === "SUCCESS") {
-
-                      var persona = response.getReturnValue();
-
-                      if (persona) { 
-                          console.log(this.helperFile() + ' > getPersona - persona:' + JSON.stringify(persona));
-                          
-                          if (persona.Width__c != null) component.set("v.widgetWidth", persona.Width__c);
-                          if (persona.Height__c != null) component.set("v.widgetHeight", persona.Height__c);
-                          console.log(this.helperFile() + ' > getPersona - widgetWidth: ' + component.get("v.widgetWidth") + ', widgetHeight: ' + component.get("v.widgetHeight"));
-                          
-                          if (persona.Background_Image__c != null) component.set("v.backgroundImage", persona.Background_Image__c);
-                          console.log(this.helperFile() + ' > getPersona - backgroundImage: AskAstroResources/' + component.get("v.backgroundImage"));
-                          
-                          if (persona.Background_Color__c != null) component.set("v.backgroundColor", persona.Background_Color__c);
-                          console.log(this.helperFile() + ' > getPersona - backgroundColor: ' + component.get("v.backgroundColor"));
-                                                      
-                          // set persona triggers the visibility of the astroWidgetIndex
-                          component.set("v.persona", persona);
-                      }
-                  }
-                  else {
-                      console.log(this.helperFile() + ' > getPersona - failed with state: ' + state);
-                      var error = new Error('getPersona - failed with state: ' + state);
-                      reject(error);
-                  }
-
-                  // promise resolved
-                  resolve();
-              });
-
-              // Send action off to be executed
-              $A.enqueueAction(action);
-
-          } // end doAction
-
-      }) // end promise
-
-  }, // end getPersona
   
+      getPersona: function(component) {
+  
+          return new Promise((resolve, reject) => {
+  
+              var personaName = component.get("v.personaName");
+              console.log(this.helperFile() + ' > getPersona - personaName: ' + personaName);
+  
+              // Create the action
+              var doAction = true;
+              var action = component.get("c.getPersona"); // method on the AstroController
+              if ((personaName) && (personaName != '')) {
+                  action.setParams({
+                      "personaName": personaName
+                  });
+              } else {
+                  // no input parameters
+                  doAction = false;
+              }
+  
+              if (doAction) {
+  
+                  // Add callback behavior for when response is received
+                  action.setCallback(this, function(response) {
+                      console.log(this.helperFile() + ' > getPersona - response: ' + response.getState())
+                      var state = response.getState();
+                      if (state === "SUCCESS") {
+  
+                          var persona = response.getReturnValue();
+  
+                          if (persona) { 
+                              console.log(this.helperFile() + ' > getPersona - persona:' + JSON.stringify(persona));
+                              
+                              if (persona.Width__c != null) component.set("v.widgetWidth", persona.Width__c);
+                              if (persona.Height__c != null) component.set("v.widgetHeight", persona.Height__c);
+                              console.log(this.helperFile() + ' > getPersona - widgetWidth: ' + component.get("v.widgetWidth") + ', widgetHeight: ' + component.get("v.widgetHeight"));
+                              
+                              if (persona.Background_Image__c != null) component.set("v.backgroundImage", persona.Background_Image__c);
+                              console.log(this.helperFile() + ' > getPersona - backgroundImage: AskAstroResources/' + component.get("v.backgroundImage"));
+                              
+                              if (persona.Background_Color__c != null) component.set("v.backgroundColor", persona.Background_Color__c);
+                              console.log(this.helperFile() + ' > getPersona - backgroundColor: ' + component.get("v.backgroundColor"));
+                                                          
+                              // set persona triggers the visibility of the astroWidgetIndex
+                              component.set("v.persona", persona);
+                              
+                              // set default open/closed state
+                              this.handleDefaultOpenClosedState(component);
+                          }
+                      }
+                      else {
+                          console.log(this.helperFile() + ' > getPersona - failed with state: ' + state);
+                          var error = new Error('getPersona - failed with state: ' + state);
+                          reject(error);
+                      }
+  
+                      // promise resolved
+                      resolve();
+                  });
+  
+                  // Send action off to be executed
+                  $A.enqueueAction(action);
+  
+              } // end doAction
+  
+          }) // end promise
+  
+      }, // end getPersona
+
+   handleDefaultOpenClosedState: function(component) {
+      
+      var isOpenStatus = component.get("v.defaultState");
+      console.log(this.helperFile() + ' > handleDefaultOpenClosedState - default: ' + isOpenStatus);
+                  
+      const toggleEvent = $A.get("e.c:astroWidgetToggleEvent");
+      toggleEvent.setParams({
+          openStatus: isOpenStatus
+      });
+      toggleEvent.fire();
+  },        
+      
   
 /* loads location points of the widget. */
 loadWidgetLocationPoints: function(cmp, evt, name) {
@@ -88,11 +103,13 @@ loadWidgetLocationPoints: function(cmp, evt, name) {
     }
   }
 },
+    
 /* x and y are the location points of the widget as pixels on window width and height. */
 saveWidgetLocationPoints: function(x, y) {
   localStorage.setItem("posX", x);
   localStorage.setItem("posY", y);
 },
+    
 /* This function determins which screen quarter the widget is located in. */
 setPositionQuarter: function(cmp, posX, posY) {
   const w = window.innerWidth;
@@ -109,6 +126,7 @@ setPositionQuarter: function(cmp, posX, posY) {
     cmp.set("v.quarter", "4");
   }
 },
+    
 /* Fires the event to notify astroWidgetContainer to calculate height. */
 calculateWidgetHeight: function(cmp, posY) {
   const appEvent = $A.get("e.c:astroWidgetCalcHeight");
@@ -117,6 +135,7 @@ calculateWidgetHeight: function(cmp, posY) {
     appEvent.fire();
   }
 },
+    
 /* catch Astro if off page and keep coords within window margins */
 keepAstroInWindow: function(cmp, posX, posY) {
   const isConsoleNavigation = cmp.get("v.isConsoleNavigation");
@@ -151,6 +170,7 @@ keepAstroInWindow: function(cmp, posX, posY) {
   const posArray = [posX, posY];
   return posArray;
 },
+    
 /* calculates x and y offset values if dragging by widget-circle or by a child image element */
 calculateOffsetXY: function(cmp, evt) {
   let offsetX = evt.offsetX;
@@ -164,6 +184,7 @@ calculateOffsetXY: function(cmp, evt) {
   // return offsetX and offsetY values in array
   return [offsetX, offsetY];
 },
+    
 /* save open closed status before dragging widget */
 saveOpenClosedStatus: function(cmp) {
   const toggleEvent = $A.get("e.c:astroWidgetToggleEvent");
@@ -172,6 +193,7 @@ saveOpenClosedStatus: function(cmp) {
   });
   toggleEvent.fire();
 },
+    
 checkToReOpenWidget: function(cmp) {
   var isOpen = cmp.get("v.isOpen")==false?"CLOSED":"OPEN";
   const toggleEvent = $A.get("e.c:astroWidgetToggleEvent");
@@ -180,6 +202,7 @@ checkToReOpenWidget: function(cmp) {
   });
   toggleEvent.fire();
 },
+    
 behavioralPerformanceCheck: function(cmp, newPosX, newPosY) {
   // keep widget coords in window
   const [posX, posY] = this.keepAstroInWindow(cmp, newPosX, newPosY);
@@ -194,6 +217,7 @@ behavioralPerformanceCheck: function(cmp, newPosX, newPosY) {
   cmp.set("v.posX", posX);
   cmp.set("v.posY", posY);
 },
+    
 setIsConsoleNavigationAttribute: function(cmp) {
   const posY = parseInt(cmp.get("v.posY"));
   const workspaceAPI = cmp.find("workspace");
@@ -216,4 +240,6 @@ setIsConsoleNavigationAttribute: function(cmp) {
       });
   }
 }
+
+
 });

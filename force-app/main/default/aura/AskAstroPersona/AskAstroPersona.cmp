@@ -2,6 +2,7 @@
     
     <!-- input --> 
     <aura:attribute name="personaName" type="String" access="global" default="Distributor" />
+    <aura:attribute name="defaultState" type="String" default="CLOSED" />
     
     <!-- set onInit -->
     <aura:attribute name="persona" type="Persona__c" access="private" />

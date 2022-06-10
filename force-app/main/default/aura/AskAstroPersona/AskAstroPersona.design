@@ -1,5 +1,6 @@
 <design:component label="Ask Astro Persona">
     
-    <design:attribute name="personaName" label="Persona Name" default="Distributor" /> 
+    <design:attribute name="personaName" label="Persona Name" default="Distributor" description="this is the name of a Person record" /> 
+    <design:attribute name="defaultState" label="Default Opened/Closed State" default="CLOSED" description="OPEN or (default) CLOSED" /> 
     
 </design:component>

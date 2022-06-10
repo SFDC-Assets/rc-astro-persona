@@ -1,28 +1,28 @@
 ({
     
-    doInit: function(cmp, evt, helper) {      
-    	var astroImage = cmp.get("v.astroImage");
-    	console.log('astroToggleController - astroImage: ' + astroImage);
-    },
-
-    
+  doInit: function(cmp, evt, helper) {      
+      console.log('astroToggleController - astroImage: ' + cmp.get("v.astroImage"));
+  },
+  
   handleClick: function(cmp, evt, helper) {
-    // Toggle OPEN/CLOSED State
-
-    let currStatus = "OPEN";
-    if (cmp.get("v.isOpenStatus") === "OPEN") {
-      currStatus = "CLOSED";
-    }
-
-    const toggleEvent = $A.get("e.c:astroWidgetToggleEvent");
-    toggleEvent.setParams({
-      openStatus: currStatus
-    });
-    toggleEvent.fire();
-    cmp.set("v.isOpenStatus", currStatus);
+      // Toggle OPEN/CLOSED State
+      
+      let currStatus = "OPEN";
+      if (cmp.get("v.isOpenStatus") === "OPEN") {
+          currStatus = "CLOSED";
+      }
+      
+      const toggleEvent = $A.get("e.c:astroWidgetToggleEvent");
+      toggleEvent.setParams({
+          openStatus: currStatus
+      });
+      toggleEvent.fire();
+      //cmp.set("v.isOpenStatus", currStatus);
   }, 
+  
   handleToggleEvent : function(cmp, evt, helper) {
-    var openStatus = evt.getParam("openStatus");
-    cmp.set("v.isOpenStatus", openStatus);
+      var openStatus = evt.getParam("openStatus");
+      cmp.set("v.isOpenStatus", openStatus);
   }
+  
 });

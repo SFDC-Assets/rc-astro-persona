@@ -1,7 +1,8 @@
 ({
-	doInit: function(cmp, evt, helper) {      
-    	var persona = cmp.get("v.persona");
+	doInit: function(cmp, evt, helper) {  
+        console.log('astroWidgetIndexController - openUp: ' + cmp.get("v.openUp"));
         
+    	var persona = cmp.get("v.persona");        
     	console.log('astroWidgetIndexController - persona: ' + JSON.stringify(persona));        
     	console.log('astroWidgetIndexController - widgetWidth: ' + cmp.get("v.widgetWidth") + ', widgetHeight: ' + cmp.get("v.widgetHeight"));
         console.log('astroWidgetIndexController - backgroundImage: ' + cmp.get("v.backgroundImage"));

@@ -11,6 +11,10 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>defaultState</name>
+                <value>OPEN</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>personaName</name>
                 <value>Robot</value>
             </componentInstanceProperties>
